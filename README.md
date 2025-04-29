@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tic Tac Toe is a simple two-player game where players take turns marking X or O in a 3×3 grid. The first player to align three of their symbols horizontally, vertically, or diagonally wins. If all cells are filled without a winner, the game ends in a draw.
 
 ## Available Scripts
 
