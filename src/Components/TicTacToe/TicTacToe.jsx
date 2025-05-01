@@ -38,40 +38,28 @@ const TicTacToe = () => {
     checkWin();
   };
 
-  const checkWin = () =>{
-    if(data[0]===data[1]&& data[1]===data[2]&& data[2]!==""){
-      won(data[2]);
+  const checkWin = () => {
+    const winPatterns = [
+      [0,1,2], [3,4,5], [6,7,8], // rows
+      [0,3,6], [1,4,7], [2,5,8], // columns
+      [0,4,8], [2,4,6]           // diagonals
+    ];
+  
+    for (let pattern of winPatterns) {
+      const [a, b, c] = pattern;
+      if (data[a] === data[b] && data[b] === data[c] && data[a] !== "") {
+        won(data[a]);
+        return;
+      }
     }
-
-   else if(data[0]===data[3]&& data[3]===data[6]&& data[6]!==""){
-      won(data[6]);
+  
+    // 👉 Draw condition: no winner AND no empty cells
+    if (data.every(cell => cell !== "")) {
+      setLock(true);
+      titlRef.current.innerHTML = `It's a <span>Draw!</span>`;
     }
-
-   else if(data[0]===data[4]&& data[4]===data[8]&& data[8]!==""){
-      won(data[8]);
-    }
-
-   else if(data[2]===data[4]&& data[4]===data[6]&& data[6]!==""){
-      won(data[6]);
-    }
-
-   else if(data[2]===data[5]&& data[5]===data[8]&& data[8]!==""){
-      won(data[8]);
-    }
-
-   else if(data[6]===data[7]&& data[7]===data[8]&& data[8]!==""){
-      won(data[8]);
-    }
-
-   else if(data[3]===data[4]&& data[4]===data[5]&& data[5]!==""){
-      won(data[5]);
-    }
-
-   else if(data[1]===data[4]&& data[4]===data[7]&& data[7]!==""){
-      won(data[7]);
-    }
-   
-  }
+  };
+  
 
   const won = (winner) =>{
     setLock(true);
