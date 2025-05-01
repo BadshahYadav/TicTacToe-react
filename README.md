@@ -2,69 +2,156 @@
 
 Tic Tac Toe is a simple two-player game where players take turns marking X or O in a 3×3 grid. The first player to align three of their symbols horizontally, vertically, or diagonally wins. If all cells are filled without a winner, the game ends in a draw.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Used](#technologies-used)
+- [File Structure](#file-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
+- [Contact](#contact)
+- [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A classic 2-player game implemented on a 3×3 grid where players alternate turns to place "X" or "O". The first to align three symbols horizontally, vertically, or diagonally wins. If all cells are filled without a winner, the game results in a draw. Simple logic and conditions are used to check for winning combinations and game completion.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The app focuses on delivering a smooth, responsive, and user-friendly experience, making learning and self-assessment both fun and engaging.
+You can view the live portfolio at: [LIVE PREVIEW](https://badshahyadav.github.io/TicTacToe-react/)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Interactive UI:** Clickable 3×3 grid with immediate feedback on moves.
+- **Win detection:** Automatically checks for winning combinations after every move.
+- **Two-player mode:** Allows two users to play alternately on the same device.
+- **Draw detection:** Declares a draw if the grid is full without a winner.
+- **Reset button:** Allows players to restart the game anytime.
+- **Responsive Design:** Optimized layout for desktop and mobile screens.
+- **Component-Based Structure:** Built with reusable and modular React components.
+- **State Management:** Uses React hooks (useState, useEffect) for managing quiz state and behavior.
+- **Simple Deployment:** Hosted using GitHub Pages.
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend**: JS,React.js, Vite (for fast build and development).
+- **Styling**: CSS3 (or Tailwind CSS if you used it).
+- **Deployment**: GitHub Pages.
+- **State Mangement** : React Hooks (useState, useEffect).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Main Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **App.jsx** : Main application logic and state.
 
-### `npm run eject`
+- **Header (Navbar.jsx)** : Contains the navigation menu for easy access to different sections like Home, About, Projects, and Contact.
+- **TicTacToe.jsx:**  Contains complete functional logic and structural logic.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## File Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Here's an overview of the project's file structure:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```plaintext
+tic-tac-toe/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Board.jsx
+│   │   └── Square.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+├── README.md
+└── .gitignore
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ensure you have the following tools installed on your development machine:
 
-### Code Splitting
+- **React.js** (Use current version)
+- **npm** or **yarn**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
 
-### Analyzing the Bundle Size
+Clone the repository to your local machine:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+https://github.com/BadshahYadav/TicTacToe-react.git
+cd TicTacToe-react
+```
 
-### Making a Progressive Web App
+Install the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm install
+# or
+yarn install
+```
 
-### Advanced Configuration
+### Running the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To start the development server, run:
 
-### Deployment
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open your browser and navigate to `http://localhost:3000` to view the application.
 
-### `npm run build` fails to minify
+## Environment Variables Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project requires the following environment variables. Create a `.env` file in the root directory and add your values:
+
+```plaintext
+VITE_APP_TITLE=TicTacToe-react
+VITE_APP_VERSION=1.0.0
+VITE_PUBLIC_URL=https://yourusername.github.io/TicTacToe-react/
+```
+
+Vite environment variables must start with VITE_ or they won’t work!
+## How to use them in your code:
+
+In any React file (e.g., App.jsx):
+```plaintext
+const title = import.meta.env.VITE_APP_TITLE;
+console.log(title);  // Outputs: TicTacToe-react
+```
+
+## Deployment (GitHub Pages)
+
+ Install gh-pages package
+
+```bash
+npm install gh-pages --save-dev
+```
+
+```bash
+npm run deploy
+```
+
+Follow the prompts to deploy your application.
+
+## Contact
+
+If you have any questions or feedback, feel free to contact me via the [contact form](https://badshahyadav.github.io/Portfolio/) on my portfolio website or connect with me through my social profiles.
+
+## 🔗 Links
+[![instagram](https://img.shields.io/badge/instagram-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/BadshahYadav)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/badshah-kumar-830146234/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/_Emperor_4k)
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
